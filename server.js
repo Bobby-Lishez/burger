@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var handlebars = require("express-handlebars");
+var path = require("path");
 var routes = require("./controllers/burgerscontroller");
 
 var PORT = process.env.PORT || 8080;
@@ -9,7 +10,7 @@ var PORT = process.env.PORT || 8080;
 //initialization
 var app = express();
 //Serve static content for the app from the public directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public')));
 //parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}));
 //parse application/json

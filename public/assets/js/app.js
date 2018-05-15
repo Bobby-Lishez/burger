@@ -9,7 +9,6 @@ $(function() {
         event.preventDefault();
         var newBurger = {
            name: $newBurger.val().trim(),
-           devoured: false
         }
         $.ajax("/api/burgers", {
             type: "POST", 
